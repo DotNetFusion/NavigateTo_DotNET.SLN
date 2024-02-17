@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Plugin.MauiMTAdmob.Controls;assembly=Plugin.MauiMTAdmob"
+             x:Class="NavigateTo.MainPage" BackgroundColor="White"> 
+    <ScrollView>
+
+     
+<VerticalStackLayout>
+            
+            <Grid Margin="15" RowDefinitions=".4*,.1*,.1*,.4*" >
+               
+                <Border Grid.RowSpan="2" BackgroundColor="Transparent" > 
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20,20,20,20"/>
+                </Border.StrokeShape>
+            </Border>
+            <Grid Margin="10" RowDefinitions="*,*,*,*" ColumnDefinitions="*"  >
+                <Frame Margin="06" Grid.Row="0"  CornerRadius="15" BorderColor="Gray" Padding="4" BackgroundColor="LightBlue">
+                    <Picker Margin="1" Title="Select a Country Code" TitleColor="Black" TextColor="Black" BackgroundColor="LightBlue" SelectedIndexChanged="OnPickerSelectedIndexChanged" HorizontalTextAlignment="Center" FontFamily="sans-serif-light" >
+                        <Picker.Items>
+                            <x:String  >India (+91)</x:String>
+                            <x:String  >United Kingdom(+44)</x:String>
+                            <x:String  >Canada(+1)</x:String>
+                            <x:String  >Australia(+61)</x:String>
+                            <x:String  >New Zealand(+64)</x:String>
+                            <x:String  >Ireland(+353)</x:String>
+                            <x:String  >South Africa(+27)</x:String>
+                            <x:String  >Nigeria(+234)</x:String>
+                            <x:String  >Jamaica(+1 876)</x:String>
+                            <x:String  >Singapore(+65)</x:String>
+                            <x:String  >Malaysia(+60)</x:String>
+                            <x:String  >Philippines(+63)</x:String>
+                            <x:String  >Ghana(+233)</x:String>
+                            <x:String  >Kenya(+254)</x:String>
+                            <x:String  >Pakistan(+92)</x:String>
+                            <x:String  >United States(+1)</x:String>
+                            <x:String  >Trinidad and Tobago(+1 868)</x:String>
+                            <x:String  >Malta(+356)</x:String>
+                            <x:String  >Bahamas(+1 242)</x:String>
+                            <x:String  >Belize(+501)</x:String>
+                        </Picker.Items>
+                            <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                    </Picker>
+                </Frame>
+                <Frame Margin="07" Grid.Row="1"  CornerRadius="15" BorderColor="Gray" Padding="4"
+                   BackgroundColor="LightBlue">
+                        <Entry   Margin="1"  x:Name="mobileNumber" 
+                    Placeholder="    Enter Mobile Number.  " 
+                    PlaceholderColor="Black" 
+                    BackgroundColor="LightBlue"
+                    IsTextPredictionEnabled="True"
+                    HorizontalTextAlignment="Center"
+                    FontFamily="sans-serif-light" ></Entry>
+                </Frame>
+                <Frame Margin="07" Grid.Row="2"  CornerRadius="15" BorderColor="Gray" Padding="4"
+                   BackgroundColor="LightBlue">
+                        <Entry  Margin="1" HorizontalTextAlignment="Center" 
+                           x:Name="message" 
+                           Placeholder="    Enter Message Here.  "
+                           PlaceholderColor="Black" 
+                           BackgroundColor="LightBlue"
+                                ></Entry>
+                </Frame>
+                <Button Margin="7" Grid.Row="3" x:Name="CounterBtn"
+                Text="Send" 
+                Clicked="OnCounterClicked"
+               
+                FontFamily="sans-serif-light"  ></Button> 
+            </Grid>
+             </Grid> 
+            <controls:MTAdView  
+                    
+                    BackgroundColor="Transparent"
+                                    x:Name="myAds"
+                                    AdsId="ca-app-pub-7447167072178928/6682358882"
+                                    AdSize="AnchoredAdaptive"
+                                    IsVisible="true"
+                                    AdsClicked="MyAds_AdsClicked"
+                                    AdsClosed="MyAds_AdVClosed"
+                                    AdsFailedToLoad="MyAds_AdFailedToLoad"              
+                                    AdsImpression="MyAds_AdVImpression"
+                                    AdsLoaded="MyAds_AdLoaded"
+                                    AdsOpened="MyAds_AdVOpened"/>
+        </VerticalStackLayout>
+    </ScrollView>
+   
+</ContentPage>
